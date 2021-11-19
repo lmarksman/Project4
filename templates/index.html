@@ -12,7 +12,7 @@
         <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     </head>
     <body class="sb-nav-fixed">
-        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+        <nav class="sb-topnav navbar navbar-expand navbar-dark" style="background-color:#98c0c3">
             <!-- Navbar Brand-->
             <a class="navbar-brand ps-3" href="/">Tornado</a>
             <!-- Sidebar Toggle-->
@@ -23,7 +23,7 @@
         </nav>
         <div id="layoutSidenav">
             <div id="layoutSidenav_nav">
-                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                <nav class="sb-sidenav accordion sb-sidenav-dark" style="background-color:#98c0c3" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading">Core</div>
@@ -31,23 +31,23 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
                             </a>
-                            <!-- <div class="sb-sidenav-menu-heading">Interface</div>
+                            <div class="sb-sidenav-menu-heading">Interface</div>
                             
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                                 <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                                Analysis
+                                Explore
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
                             <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                                    <a class="nav-link" href="">Exchange rates</a>
+                                    <a class="nav-link" href="">About this project</a>
                                 </nav>
-                            </div> -->
+                            </div>
 
                         </div>
                     </div>
-                    <div class="sb-sidenav-footer">
-                        <div class="small">Logged in as:</div>
+                    <div class="sb-sidenav-footer" style="background-color:#82a8ab; color: black;">
+                        <div class="small" style="color: black;">Logged in as:</div>
                         Project Grader
                     </div>
                 </nav>
@@ -61,7 +61,7 @@
                         </div>
                         <h1 class="mt-4">Dashboard</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Explore 20 years of data from 13 stock exchanges around the world</li>
+                            <li class="breadcrumb-item active">Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
                         </ol>
 
                         <hr>
@@ -69,12 +69,12 @@
                         <div class="row">
                             <div class="col-xl-4">
                                 <div class="card mb-4" style="height: 250px;">
-                                    <div class="card-header">
+                                    <div class="card-header" style="background-color: rgba(171,214,213,0.3)">
                                         <i class="fas fa-sort-amount-down-alt me-1"></i>
                                         Click to Navigate
                                     </div>
                                     <div class="card-body">
-                                    <div style="padding-left: 5px;">
+                                    <!-- <div style="padding-left: 5px;">
                                         <label for="years">Year:</label>
                                         <select name="year" id="year" > 
                                           <option value="2021">2021</option>
@@ -123,26 +123,28 @@
                                       <br>
                                       <div style="padding-left: 5px;">
                                         <button  class="btn" style ="background-color: #495057; color: white;" onClick="GetResults()">Update</button>
-                                      </div>
+                                      </div> -->
                                     </div>
                                 </div>
                             </div>
                             <div class="col-xl-1"></div>
                             <div class="col-xl-7">
-                                <img src="https://i2.wp.com/finvezto.com/wp-content/uploads/2020/07/456-1.png" class="img-fluid" alt="">
+                                
+
                             </div>
+                            
                         </div>
 
                         <br>
-                        <h2 > Analysis of Stock Price</h2>
+                        <h2 > Analysis</h2>
                         <br>
                         
                         <div class="row">
                             <div class="col-xl-6">
                                 <div class="card mb-4">
-                                    <div class="card-header">
+                                    <div class="card-header" style="background-color: rgba(171,214,213,0.3)">
                                         <i class="fa fa-chart-line me-1"></i>
-                                        Opening Prices
+                                        Title
                                     </div>
                                     <div class="card-body">
                                       <div id="compare_open"></div>
@@ -151,9 +153,9 @@
                             </div>
                             <div class="col-xl-6">
                                 <div class="card mb-4">
-                                    <div class="card-header">
+                                    <div class="card-header" style="background-color: rgba(171,214,213,0.3)">
                                         <i class="fas fa-chart-bar me-1"></i>
-                                        Daily Price Comparison
+                                        Title
                                     </div>
                                     <div class="card-body">
                                         <div id="candlestick"></div>
@@ -163,15 +165,15 @@
                         </div>
 
                         <br>
-                        <h2 > Analysis of Stocks Traded</h2>
+                        <h2 > Analysis</h2>
                         <br>
 
                         <div class="row">
                             <div class="col-xl-6">
                                 <div class="card mb-4">
-                                    <div class="card-header">
+                                    <div class="card-header" style="background-color: rgba(171,214,213,0.3)">
                                         <i class="fas fa-chart-pie me-1"></i>
-                                        Volume of Trades
+                                        Title
                                     </div>
                                     <div class="card-body">
                                         <div id="piechart"></div>
@@ -179,15 +181,7 @@
                                 </div>
                             </div>
                             <div class="col-xl-6">
-                                <div class="card mb-4">
-                                    <div class="card-header">
-                                        <i class="fas fa-chart-pie me-1"></i>
-                                        Total Trades (by Year)
-                                    </div>
-                                    <div class="card-body">
-                                        <div id="piechart2"></div>
-                                    </div>
-                                </div>
+                                <div class='tableauPlaceholder' id='viz1637295428038' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Pr&#47;Project4_16368488740550&#47;AvgMagnitudebyYear&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Project4_16368488740550&#47;AvgMagnitudebyYear' /><param name='tabs' value='yes' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Pr&#47;Project4_16368488740550&#47;AvgMagnitudebyYear&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1637295428038');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
                             </div>
                         </div>
                             
@@ -212,10 +206,6 @@
         <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
-        <script src="{{ url_for('static', filename='js/app.js') }}"></script>
-        <script src="{{ url_for('static', filename='js/plot.js') }}"></script>
-        <script src="{{ url_for('static', filename='js/candlestick.js') }}"></script>
-        <script src="{{ url_for('static', filename='js/pieChart.js') }}"></script>
         
     </body>
 </html>

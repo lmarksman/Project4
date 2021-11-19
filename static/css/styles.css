@@ -74,6 +74,10 @@
   max-height: 260px;
 }
 
+/* Anime styling */
+
+/* End of anime styling */
+
 
 @media (prefers-reduced-motion: no-preference) {
   :root {
