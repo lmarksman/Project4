@@ -17,7 +17,7 @@ from sqlalchemy.sql.schema import Index
 from config import password
 # connection_string = f"postgres:{password}@localhost:5432/Tornado"
 # engine = create_engine(f'postgresql://{connection_string}')
-engine = create_engine("postgresql://postgres:postgres@localhost:5432/Tornado")
+engine = create_engine("postgresql://postgres:postgres@localhost:5432/tornado")
 
 # reflect an existing database into a new model
 Base = automap_base()

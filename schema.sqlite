@@ -1,5 +1,6 @@
 CREATE TABLE tornado_data (
-om int primary key,
+index int primary key,
+om int ,
 Year int,
 Month int,
 Day int,
