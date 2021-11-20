@@ -70,9 +70,10 @@
 }
 
 .img-fluid{
-  width: 100%;
-  max-height: 260px;
+  max-width: 5px;
+  max-height: 5px;
 }
+
 
 /* Anime styling */
 

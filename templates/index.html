@@ -6,8 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>World Stock Exchange</title>
-        <link href="static/css/styles.css" rel="stylesheet" />
+        <title>Tornado Predictions</title>
+        <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
         <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     </head>
@@ -17,7 +17,6 @@
             <a class="navbar-brand ps-3" href="/">Tornado</a>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
-            
             <!-- Navbar-->
             
         </nav>
@@ -29,21 +28,27 @@
                             <div class="sb-sidenav-menu-heading">Core</div>
                             <a class="nav-link" href="/">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                Dashboard
+                                Home
                             </a>
                             <div class="sb-sidenav-menu-heading">Interface</div>
                             
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                                 <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                                Explore
+                                Historical Data
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
                             <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                                    <a class="nav-link" href="">About this project</a>
+                                    <a class="nav-link" href="/maps">Maps</a>
+                                </nav>
+                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                                    <a class="nav-link" href="/charts">Charts</a>
                                 </nav>
                             </div>
-
+                            <a class="nav-link" href="/about">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                About
+                            </a>
                         </div>
                     </div>
                     <div class="sb-sidenav-footer" style="background-color:#82a8ab; color: black;">
@@ -57,9 +62,12 @@
                     <div class="container-fluid px-4">
                         <div style="clear: both">
                             <h1 style="float: left"></h1>
-                            <i class="fas fa-globe fa-5x" style="float: right"></i>
+                            <!-- <i class="fas fa-globe fa-5x" style="float: right"></i> -->
+                            <i style="float: right">
+                                <img src="https://media3.giphy.com/media/iMWu9tJ6sdEmgxcmWd/giphy.gif?cid=6c09b952tf77ikqeegltjegprfytuhhqkbm2zmn9vy13q0hn&rid=giphy.gif&ct=s" class="img-fluid" style="margin-top: 0px; max-width: 100px; max-height: 100px;" alt="tornado gif">
+                            </i>
                         </div>
-                        <h1 class="mt-4">Dashboard</h1>
+                        <h1 class="mt-4">Dashboard </h1>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item active">Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
                         </ol>
@@ -181,7 +189,7 @@
                                 </div>
                             </div>
                             <div class="col-xl-6">
-                                <div class='tableauPlaceholder' id='viz1637295428038' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Pr&#47;Project4_16368488740550&#47;AvgMagnitudebyYear&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Project4_16368488740550&#47;AvgMagnitudebyYear' /><param name='tabs' value='yes' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Pr&#47;Project4_16368488740550&#47;AvgMagnitudebyYear&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1637295428038');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+                                <!-- <div class='tableauPlaceholder' id='viz1637295428038' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Pr&#47;Project4_16368488740550&#47;AvgMagnitudebyYear&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Project4_16368488740550&#47;AvgMagnitudebyYear' /><param name='tabs' value='yes' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Pr&#47;Project4_16368488740550&#47;AvgMagnitudebyYear&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1637295428038');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script> -->
                             </div>
                         </div>
                             

@@ -40,6 +40,20 @@ app = Flask(__name__)
 def home():
     return render_template("index.html")
 
+@app.route("/about")
+def about():
+
+    return render_template("about.html")
+
+@app.route("/charts")
+def charts():
+
+    return render_template("charts.html")
+
+@app.route("/maps")
+def maps():
+
+    return render_template("maps.html")
 #------------------------------------------
 #API Routes
 
