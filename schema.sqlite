@@ -22,6 +22,8 @@ Ending_Lon decimal(10,6),
 Length decimal(10,6),
 Width int,
 fc int,
+Income decimal(10,6),
+Pop_Density decimal(10,6),
 Adj_Property_Loss decimal(16,12),
 Zipcode varchar
 )
