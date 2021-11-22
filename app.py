@@ -4,6 +4,8 @@ from sqlalchemy import create_engine, func, desc
 from sqlalchemy.ext.automap import automap_base
 from datetime import date
 import sqlalchemy as sa
+from datetime import datetime
+import pickle
 
 from flask import (
     Flask,
@@ -55,7 +57,49 @@ def maps():
 
     return render_template("maps.html")
 #------------------------------------------
-#API Routes
+@app.route("/model" , methods=["POST"])
+def model():
+
+    Month = datetime.now().month
+    Magnitude = request.form["magnitude"]
+    Injuries = 2.4
+    Fatalities = 0.15
+    Crop_Loss = 0.003
+
+    Length = request.form["length"]
+    if Length == "":
+        Length = 4.71
+    Length = float(Length)
+
+    Width = request.form["width"]
+    if Width == "":
+        Width = 124
+
+    zipcode = request.form["zipcode"]
+    if zipcode == "":
+        zipcode = 67846.0
+    zipcode = float(Width)
+
+    Income = 56221.0
+    Pop_Density = 462.39
+
+    prediction = 0
+
+    X = [[Month, Magnitude, Injuries, Fatalities, Crop_Loss, Length, Width, Income, Pop_Density, zipcode]]
+
+    print(X)
+
+    filename = './data/tornado_model.sav'
+    loaded_model = pickle.load(open(filename, 'rb'))
+
+    prediction = loaded_model.predict(X)[0][0]
+
+    prediction = "${0:,.2f}".format(prediction)
+
+    print(prediction)
+
+    return render_template("index.html", prediction = prediction)
+
 
 
 
