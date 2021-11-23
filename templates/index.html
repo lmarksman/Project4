@@ -78,75 +78,65 @@
                         <hr>
 
                         <div class="row">
-                            <div class="col-xl-4">
-                                <div class="card mb-4" style="height: 250px;">
+                            <div class="col-xl-5">
+                                <div class="card mb-4">
                                     <div class="card-header" style="background-color: rgba(171,214,213,0.3)">
                                         <i class="fas fa-sort-amount-down-alt me-1"></i>
                                         Click to Navigate
                                     </div>
                                     <div class="card-body">
-                                    <!-- <div style="padding-left: 5px;">
-                                        <label for="years">Year:</label>
-                                        <select name="year" id="year" > 
-                                          <option value="2021">2021</option>
-                                          <option value="2020">2020</option>
-                                          <option value="2019">2019</option>
-                                          <option value="2018">2018</option>
-                                          <option value="2017">2017</option>
-                                          <option value="2016">2016</option>
-                                          <option value="2015">2015</option>
-                                          <option value="2014">2014</option>
-                                          <option value="2013">2013</option>
-                                          <option value="2012">2012</option>
-                                          <option value="2011">2011</option>
-                                          <option value="2010">2010</option>
-                                          <option value="2009">2009</option>
-                                          <option value="2008">2008</option>
-                                          <option value="2007">2007</option>
-                                          <option value="2006">2006</option>
-                                          <option value="2005">2005</option>
-                                          <option value="2004">2004</option>
-                                          <option value="2003">2003</option>
-                                          <option value="2002">2002</option>
-                                          <option value="2001">2001</option>
-                                          <option value="2000">2000</option>
-                                        </select>        
-                                      </div>
-                                      <br>
-                                      <div style="padding-left: 5px;">
-                                        <label for="StockIndexes">Stocks:</label>
-                                          <select name="stock" id="stock"> 
-                                            <option value="NYA">New York Stock Exchange</option>
-                                            <option value="IXIC">NASDAQ</option>
-                                            <option value="HSI">Hong Kong Stock Exchange</option>
-                                            <option value="000001.SS">Shanghai Stock Exchange</option>
-                                            <option value="GSPTSE">Toronto Stock Exchange</option>
-                                            <option value="399001.SZ">Shenzhen Stock Exchange</option>
-                                            <option value="NSEI">National Stock Exchange of India</option>
-                                            <option value="GDAXI">Frankfurt Stock Exchange</option>
-                                            <option value="KS11">Korea Exchange</option>
-                                            <option value="SSMI">SIX Swiss Exchange</option>
-                                            <option value="J203.JO">Johannesburg Stock Exchange</option>
-                                            <option value="N225">Tokyo Stock Exchange</option>
-                                            <option value="N100">Euronext</option>
-                                          </select>        
-                                      </div>
-                                      <br>
-                                      <div style="padding-left: 5px;">
-                                        <button  class="btn" style ="background-color: #495057; color: white;" onClick="GetResults()">Update</button>
-                                      </div> -->
+                                        <form method="POST" action="/model" role="form", name="tornadoform">
+                                  
+                                            <label for="magnitude">Magnitude:</label>
+                                            <br>
+
+                                            <select name="magnitude" id="magnitude">
+                                                <option value="1"">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                            </select>
+               
+                                            <br>
+                                            <div class="form-group">
+                                                <label for="legnth">Legnth</label>
+                                                <input type="text" class="form-control" id="legnth" name="legnth" placeholder="Tornado Legnth">
+                                            </div>
+
+                                            <br>
+                                            <div class="form-group">
+                                                <label for="width">Width</label>
+                                                <input type="text" class="form-control" id="width" name="width" placeholder="Tornado Width">
+                                            </div>
+
+                                            <br>
+                                            <div class="form-group">
+                                                <label for="zipcode">Zipcode</label>
+                                                <input type="text" class="form-control" id="zipcode" name="zipcode" placeholder="Zipcode">
+                                            </div>
+                                  
+                                            <br>
+                                            <input type="submit" value="Submit" class="btn btn-secondary">
+                                  
+                                          </form>
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        <div class="row">
                             <div class="col-xl-1"></div>
-                            <div class="col-xl-7">
-                                
-
+                            <div class="col-xl-6"> 
+                                {% if prediction %} 
+                                    <div class="prediction">
+                                    Your predicted price is: {{prediction}}
+                                    </div>
+                                 {% endif %}
                             </div>
                             
                         </div>
 
-                        <br>
+                        <!-- <br>
                         <h2 > Analysis</h2>
                         <br>
                         
@@ -194,7 +184,7 @@
                             <div class="col-xl-6">
                                 <!-- <div class='tableauPlaceholder' id='viz1637295428038' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Pr&#47;Project4_16368488740550&#47;AvgMagnitudebyYear&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Project4_16368488740550&#47;AvgMagnitudebyYear' /><param name='tabs' value='yes' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Pr&#47;Project4_16368488740550&#47;AvgMagnitudebyYear&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1637295428038');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script> -->
                             </div>
-                        </div>
+                        </div> -->
                             
                         </div>
                     </div>
