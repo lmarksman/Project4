@@ -54,6 +54,11 @@ def charts():
 def maps():
 
     return render_template("maps.html")
+
+@app.route("/frequency")
+def frequency():
+
+    return render_template("frequency.html")
 #------------------------------------------
 #API Routes
 
