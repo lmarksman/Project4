@@ -5,6 +5,7 @@ from sqlalchemy.ext.automap import automap_base
 from datetime import date
 import sqlalchemy as sa
 from datetime import datetime
+import tensorflow as tf
 import pickle
 
 from flask import (
@@ -17,6 +18,10 @@ from sqlalchemy.sql.expression import extract
 from sqlalchemy.sql.schema import Index
 
 from config import password
+
+filename = 'tornado_model.h5'
+loaded_model = tf.keras.models.load_model(filename)
+
 # connection_string = f"postgres:{password}@localhost:5432/Tornado"
 # engine = create_engine(f'postgresql://{connection_string}')
 engine = create_engine("postgresql://postgres:postgres@localhost:5432/tornado")
@@ -67,23 +72,28 @@ def model():
 
     Month = datetime.now().month
     Magnitude = request.form["magnitude"]
+    Magnitude = float(Magnitude)
     Injuries = 2.4
     Fatalities = 0.15
     Crop_Loss = 0.003
-
+    
     Length = request.form["length"]
     if Length == "":
         Length = 4.71
     Length = float(Length)
+    
 
     Width = request.form["width"]
     if Width == "":
         Width = 124
+    Width = int(Width)
+    
 
     zipcode = request.form["zipcode"]
     if zipcode == "":
         zipcode = 67846.0
     zipcode = float(Width)
+    
 
     Income = 56221.0
     Pop_Density = 462.39
@@ -94,9 +104,8 @@ def model():
 
     print(X)
 
-    filename = './data/tornado_model.sav'
-    loaded_model = pickle.load(open(filename, 'rb'))
-
+    scaler = pickle.load(open("scaler.sav", "rb"))
+    X = scaler.transform(X)
     prediction = loaded_model.predict(X)[0][0]
 
     prediction = "${0:,.2f}".format(prediction)
