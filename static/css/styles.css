@@ -11321,6 +11321,12 @@ body {
 #layoutSidenav {
   display: flex;
 }
+
+#tableauPlaceholder {
+  width: 75%;
+  height: 75%;
+}
+
 #layoutSidenav #layoutSidenav_nav {
   flex-basis: 225px;
   flex-shrink: 0;

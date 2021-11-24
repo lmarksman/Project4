@@ -61,6 +61,12 @@ def maps():
 def frequency():
 
     return render_template("frequency.html")
+
+@app.route("/tracks")
+def tracks():
+
+    return render_template("tracks.html")
+
 #------------------------------------------
 @app.route("/model" , methods=["POST"])
 def model():
