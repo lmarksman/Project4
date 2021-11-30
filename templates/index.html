@@ -42,9 +42,6 @@
                                     <a class="nav-link" href="/maps">Maps</a>
                                 </nav>
                                 <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                                    <a class="nav-link" href="/charts">Charts</a>
-                                </nav>
-                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
                                     <a class="nav-link" href="/frequency">Frequency</a>
                                 </nav>
                                 <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
@@ -53,7 +50,7 @@
                             </div>
                             <a class="nav-link" href="/about">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                About
+                                About(EDA)
                             </a>
                         </div>
                     </div>
@@ -73,12 +70,17 @@
                                 <img src="https://media3.giphy.com/media/iMWu9tJ6sdEmgxcmWd/giphy.gif?cid=6c09b952tf77ikqeegltjegprfytuhhqkbm2zmn9vy13q0hn&rid=giphy.gif&ct=s" class="img-fluid" style="margin-top: 0px; max-width: 100px; max-height: 100px;" alt="tornado gif">
                             </i>
                         </div>
-                        <h1 class="mt-4">Dashboard </h1>
+                        <h1 class="mt-4">Estimation of Property Damage</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+                            <li class="breadcrumb-item active">This site is a final project for the University of Arizona Data Analytics Bootcamp project completed by Alysia Dugan, Matt Lett, Sam Clements, and Kristin Scholten.  </li>
+                            
                         </ol>
 
                         <hr>
+
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item active">In our final project, we used machine learning to create a tool that aims to help insurance companies predict the dollar amount of damages caused from tornadoes. Use the form below to return a prediction of the expected property loss</li>
+                        </ol>
 
                         <div class="row">
                             <div class="col-xl-5">
@@ -126,18 +128,20 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
+
                             <div class="col-xl-1"></div>
                             <div class="col-xl-6"> 
                                 {% if prediction %} 
-                                    <div class="prediction">
-                                    Your predicted price is: {{prediction}}
+                                    <div class="prediction" style="color: #82a8ab;">
+                                    <h2>The predicted damage is: {{prediction}}</h2>
                                     </div>
+                                    <h1 style="color: rgba(52, 104, 103, 0.5);">~~~~~~~~~~~~~~~~~~~~~~</h1>
+                                    <img src="https://media.istockphoto.com/vectors/tornado-destroys-houses-landscape-illustration-vector-id1218824935?k=20&m=1218824935&s=612x612&w=0&h=WirzdaOIIfZ0AfU4fbO_I1J2A2wYrvfMU52T2ngYQO4=" alt="">
+                                    <h1 style="color: rgba(52, 104, 103, 0.5);">~~~~~~~~~~~~~~~~~~~~~~</h1>
                                  {% endif %}
                             </div>
-                            
                         </div>
+                    
 
                         <!-- <br>
                         <h2 > Analysis</h2>

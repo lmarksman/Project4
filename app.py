@@ -52,11 +52,6 @@ def about():
 
     return render_template("about.html")
 
-@app.route("/charts")
-def charts():
-
-    return render_template("charts.html")
-
 @app.route("/maps")
 def maps():
 
@@ -113,6 +108,8 @@ def model():
     scaler = pickle.load(open("scaler.sav", "rb"))
     X = scaler.transform(X)
     prediction = loaded_model.predict(X)[0][0]
+
+    prediction = prediction * 1000000
 
     prediction = "${0:,.2f}".format(prediction)
 
